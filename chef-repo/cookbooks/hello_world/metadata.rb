@@ -1,0 +1,10 @@
+name 'Hello_World'
+description 'A Hello World Website in IIS'
+version '0.0.6'
+maintainer 'Tim Kidd'
+maintainer_email 'tkidd77@gmail.com'
+source_url 'https://github.com/tkidd77/hello_world'
+recipe 'Hello_World::default', 'Build IIS Hello World site'
+
+depends 'iis'
+depends 'chef-client'

@@ -1,0 +1,70 @@
+# Chef
+*.pem
+/clients/
+/cookbooks/
+/nodes/
+!cookbooks/README.md
+/cleanup/
+/Gemfile.lock
+/bin/
+/.bundle/
+/bundle/
+/vendor/gems/
+!cookbooks/README.md
+/Berksfile.lock
+/.vagrant/
+*sublime*
+tkidd_aws/.terraform/
+chef-repo/.chef/syntaxcache/
+
+# Terraform
+.terraform/*
+
+# Ruby
+.rake_test_cache
+.rvmrc
+.rbenv-version
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+.elc
+auto-save-list
+tramp
+.\#*
+
+# Emacs org-mode
+.org-id-locations
+*_archive
+
+# SublimeText
+*.sublime-workspace
+
+# TextMate
+*.tmproj
+*.tmproject
+tmtags
+
+# Vim
+.*.s[a-w][a-z]
+*.un~
+Session.vim
+.netrwhist
+*~
+
+# OS X
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
