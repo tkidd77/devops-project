@@ -1,0 +1,18 @@
+---
+driver:
+  vagrant
+
+provisioner:
+  name: chef_zero
+
+verifier:
+  name: inspec
+
+platforms:
+  - name: windows-2016
+
+suites:
+  - name: default
+    run_list:
+      - recipe[hello_world::default]
+    attributes:
