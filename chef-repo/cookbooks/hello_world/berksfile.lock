@@ -1,16 +1,16 @@
 DEPENDENCIES
-  Hello_World
+  hello_world
     path: .
     metadata: true
 
 GRAPH
-  Hello_World (0.0.6)
-    chef-client (>= 0.0.0)
-    iis (>= 0.0.0)
   chef-client (11.0.1)
     cron (>= 4.2.0)
     logrotate (>= 1.9.0)
   cron (6.2.1)
+  hello_world (0.0.6)
+    chef-client (>= 0.0.0)
+    iis (>= 0.0.0)
   iis (7.1.0)
     windows (>= 4.1.0)
   logrotate (2.2.0)
