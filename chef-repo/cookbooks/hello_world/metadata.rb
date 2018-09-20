@@ -8,4 +8,3 @@ recipe 'hello_world::default', 'Build IIS Hello World site'
 
 depends 'iis'
 depends 'chef-client'
-#depends 'hello-world'
