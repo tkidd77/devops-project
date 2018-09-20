@@ -1,3 +1,4 @@
 source 'https://supermarket.chef.io'
+#cookbook 'hello_world', '~> 0.0.6', path: "C:\\Git\\Comcast_project\\chef-repo\\cookbooks\\hello_world"
 
 metadata

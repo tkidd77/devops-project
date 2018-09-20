@@ -31,14 +31,21 @@ describe 'hello_world::default' do
     it 'converges successfully' do
       expect { chef_run }.to_not raise_error
     end
+end
 
-# not working due the rspec 3.0 wanting a method instead of a block. Not sure how to do this.
+describe 'hello_world::default' do
 
-    it 'touches the correct file' do
-      expect { chef_run }.to touch_file ('C:\inetpub\wwwroot\iisstart.htm')
-    end
+  let :chef_run do
+    ChefSpec::SoloRunner.new(platform: 'windows', version: '2016').converge(described_recipe)
+  end
 
-    # it "has the right lines in c:\inetpub\wwwroot\iisstart.htm" do
+     it 'touches the correct file' do
+       expect(chef_run).to create_file('C:\inetpub\wwwroot\iisstart.htm')
+     end
+
+# Would be best to check contents of file as well - need to get this test working
+
+    # it "has the right lines in c:\\inetpub\\wwwroot\\iisstart.htm" do
     #   ['Hello World', 'Hello World!'].each do |line|
     #     file('C:\inetpub\wwwroot\iisstart.htm').must_include line
     #   end
