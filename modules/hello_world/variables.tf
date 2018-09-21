@@ -40,7 +40,7 @@ variable "ami_id" {
 variable "instance_root_ebs_size" {
   type = "map"
   default {
-    default = "18"
+    default = "30"
   }
 }
 
