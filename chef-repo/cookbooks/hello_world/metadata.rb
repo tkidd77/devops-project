@@ -1,6 +1,6 @@
 name 'hello_world'
 description 'A Hello World Website in IIS'
-version '0.0.9'
+version '0.0.10'
 maintainer 'Tim Kidd'
 maintainer_email 'tkidd77@gmail.com'
 source_url 'https://github.com/tkidd77/devops-project/tree/master/chef-repo/cookbooks/hello_world.git'

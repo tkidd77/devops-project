@@ -89,7 +89,7 @@ variable "number_of_instances" {
 variable "chef_runlist" {
   type = "map"
   default {
-    default = "recipe[Hello_World::default]"
+    default = "recipe[hello_world::default]"
   }
 }
 

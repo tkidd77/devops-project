@@ -79,7 +79,7 @@ resource "aws_security_group_rule" "RDP_in_for_tim" {
   from_port = 3389
   to_port = 3389
   protocol = "tcp"
-  cidr_blocks = ["100.14.74.73/32"]
+  cidr_blocks = ["100.14.74.34/32"]
   security_group_id = "${aws_security_group.sg_allow_tim_home_rdp.id}"
 }
 
@@ -262,7 +262,7 @@ resource "aws_autoscaling_group" "bar" {
   name                      = "hello_world"
   max_size                  = 3
   min_size                  = 1
-  health_check_grace_period = 300
+  health_check_grace_period = 9500
   health_check_type         = "ELB"
   desired_capacity          = 1
   force_delete              = true
