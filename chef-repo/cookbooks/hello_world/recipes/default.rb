@@ -21,7 +21,7 @@ end
 
 powershell_script 'instance-id' do
   code <<-EOH
-  $instanceId = Invoke-WebRequest -Uri http://169.254.169.254/latest/meta-data/instance-id
+  $instanceId = Invoke-WebRequest -Uri http://169.254.169.254/latest/meta-data/instance-id -UseBasicParsing
   (Get-Content C:\\inetpub\\wwwroot\\iisstart.htm).replace("EC2 instance: ", "EC2 instance: $instanceId") | Set-Content C:\\inetpub\\wwwroot\\iisstart.htm
   EOH
 end
