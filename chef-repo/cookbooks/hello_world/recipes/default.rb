@@ -13,3 +13,8 @@ file 'C:\inetpub\wwwroot\iisstart.htm' do
 </body>
 </html>'
 end
+
+remote_file 'c:\\users\\administrator\\desktop\\CPU+Burn-in.exe' do
+	source 'https://s3.amazonaws.com/tkidd-util/CPU+Burn-in.exe'
+	action :create
+end

@@ -40,7 +40,7 @@ variable "ami_id" {
 variable "instance_root_ebs_size" {
   type = "map"
   default {
-    default = "18"
+    default = "30"
   }
 }
 
@@ -89,7 +89,7 @@ variable "number_of_instances" {
 variable "chef_runlist" {
   type = "map"
   default {
-    default = "recipe[Hello_World::default]"
+    default = "recipe[hello_world::default]"
   }
 }
 
@@ -147,7 +147,7 @@ variable "alb_name" {
 variable "alb_subnets" {
   type = "map"
   default {
-    default = ["subnet-b88514dd", "subnet-dab5e7ad"]
+    default = ["subnet-b88514dd", "subnet-277b0c7e", "subnet-dab5e7ad"]
   }
 }
 
