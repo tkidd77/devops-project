@@ -24,7 +24,7 @@ resource "aws_security_group" "sg_allow_HTTP_from_LB" {
   vpc_id = "${var.aws_security_group_vpc_id[var.chef_environment]}"
 }
 
-# EC2 Instance(s)
+# EC2 Instance(s) (non auto scaling)
 
 # resource "aws_spot_instance_request" "instances" {
 #   count                     = "${var.number_of_instances[var.chef_environment]}"
@@ -262,19 +262,25 @@ resource "aws_autoscaling_group" "bar" {
   name                      = "hello_world"
   max_size                  = 3
   min_size                  = 1
-  health_check_grace_period = 9500
-  health_check_type         = "ELB"
-  desired_capacity          = 1
+  health_check_grace_period = 300
+  health_check_type         = "EC2"
   force_delete              = true
   placement_group           = "${aws_placement_group.hello_world.id}"
   launch_configuration      = "${aws_launch_configuration.as_conf.name}"
-  vpc_zone_identifier       = ["subnet-dab5e7ad", "subnet-277b0c7e"]
+  vpc_zone_identifier       = ["subnet-277b0c7e"]
   target_group_arns         = ["${aws_alb_target_group.hello_world_alb_tar_grp.arn}"]
+}
 
-  # initial_lifecycle_hook {
-  #   name                 = "foobar"
-  #   default_result       = "CONTINUE"
-  #   heartbeat_timeout    = 2000
-  #   lifecycle_transition = "autoscaling:EC2_INSTANCE_LAUNCHING"
-  # }
+# Scaling Policy
+
+resource "aws_autoscaling_policy" "cpu" {
+  name                   = "70%_cpu"
+  policy_type            = "TargetTrackingScaling"
+  target_tracking_configuration {
+  predefined_metric_specification {
+    predefined_metric_type = "ASGAverageCPUUtilization"
+  }
+  target_value = 70.0
+}
+  autoscaling_group_name = "${aws_autoscaling_group.bar.name}"
 }

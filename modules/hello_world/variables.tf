@@ -147,7 +147,7 @@ variable "alb_name" {
 variable "alb_subnets" {
   type = "map"
   default {
-    default = ["subnet-b88514dd", "subnet-dab5e7ad"]
+    default = ["subnet-b88514dd", "subnet-277b0c7e", "subnet-dab5e7ad"]
   }
 }
 
