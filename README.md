@@ -32,7 +32,7 @@ Clone entire repo and then set up IaC tools
 ### Prerequisites
 
 Set up Terraform - https://www.terraform.io/intro/getting-started/install.html
-Set up a free Managed Chef Server - https://manage.chef.io/signup
+Set up a free Managed Chef Server (up to 5 nodes) - https://manage.chef.io/signup
 
 ## Running the demo
 
@@ -73,4 +73,4 @@ Chef Automate would lint the cookbooks via RuboCop, but has not been used in the
 
 ## Authors
 
-Tim Kidd - [PurpleBooth](https://github.com/PurpleBooth)
+Tim Kidd - https://www.linkedin.com/in/timothykidd/
