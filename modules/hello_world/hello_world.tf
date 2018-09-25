@@ -262,7 +262,7 @@ resource "aws_autoscaling_group" "bar" {
   name                      = "hello_world"
   max_size                  = 3
   min_size                  = 1
-  health_check_grace_period = 300
+  health_check_grace_period = 400
   health_check_type         = "EC2"
   force_delete              = true
   placement_group           = "${aws_placement_group.hello_world.id}"
