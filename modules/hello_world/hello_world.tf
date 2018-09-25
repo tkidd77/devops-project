@@ -155,6 +155,7 @@ resource "aws_alb_target_group" "hello_world_alb_tar_grp" {
   port     = 80
   protocol = "HTTP"
   vpc_id   = "${var.alb_target_group_vpc_id[var.chef_environment]}"
+  deregistration_delay = 15
 
   health_check {
     healthy_threshold   = 2
@@ -262,7 +263,7 @@ resource "aws_autoscaling_group" "bar" {
   name                      = "hello_world"
   max_size                  = 3
   min_size                  = 1
-  health_check_grace_period = 400
+  health_check_grace_period = 300
   health_check_type         = "EC2"
   force_delete              = true
   placement_group           = "${aws_placement_group.hello_world.id}"
@@ -276,6 +277,7 @@ resource "aws_autoscaling_group" "bar" {
 resource "aws_autoscaling_policy" "cpu" {
   name                   = "70%_cpu"
   policy_type            = "TargetTrackingScaling"
+  estimated_instance_warmup = "450"
   target_tracking_configuration {
   predefined_metric_specification {
     predefined_metric_type = "ASGAverageCPUUtilization"
