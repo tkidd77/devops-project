@@ -4,6 +4,10 @@ Built by Tim Kidd - https://www.linkedin.com/in/timothykidd/
 
 This project utilizes Terraform and Chef to run an auto scaling, secure, low cost "Hello World" website in AWS. Note: This guide is high level.
 
+## Version
+
+0.1.1
+
 ## Features
 
 - All infrastructure to run the demo site lives in code and is built automatically except for foundational pieces such as the demo SSL cert and demo domain registrar's nameserver settings, etc.
